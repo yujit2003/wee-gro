@@ -7,7 +7,7 @@ export async function GET(request) {
   try {
     // Launch Puppeteer
     const browser = await puppeteer.launch({
-      headless: false, // Change to false if you need to see the browser
+      headless: true, // Change to false if you need to see the browser
       args: [
         "--no-sandbox",
         "--disable-setuid-sandbox",
