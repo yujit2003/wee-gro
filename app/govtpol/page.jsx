@@ -25,7 +25,7 @@ const page = () => {
     const fetchProducts = async () => {
       try {
         console.log(process.env.NEXTAUTH_URL);
-        const { data } = await axios.get(`${process.env.NEXTAUTH_URL}/api/webscrapping`);
+        const { data } = await axios.get('http://wee-gro.vercel.app/api/webscrapping');
         console.log("Products fetched:", data.policy);
         setData(data.policy);
         setLoading(false);
