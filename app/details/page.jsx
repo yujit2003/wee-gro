@@ -2,7 +2,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-import Product from "@/components/Product";
+import Product from "@/components/product";
 import NavBar from "@/components/Header";
 import Footer from "@/components/Footer";
 import Image from "next/image";
