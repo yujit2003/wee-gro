@@ -67,8 +67,8 @@ export default function Bidding() {
               <h1 className="text-3xl font-bold mt-4">HERE BELOW IS LIST OF ALL STARTUPS...</h1>
             </div>
             <div className="flex flex-wrap justify-center items-center bg-white bg-opacity-80">
-              {products.map((product) => (
-                <div className="hover:translate-y-[-0.25rem] rounded-md flex flex-wrap bg-slate-700  min-h-[30vh] min-w-[40vw] md:min-w-[30vw] m-4 justify-center items-center">
+              {products.map((product, index) => (
+                <div key={index} className="hover:translate-y-[-0.25rem] rounded-md flex flex-wrap bg-slate-700  min-h-[30vh] min-w-[40vw] md:min-w-[30vw] m-4 justify-center items-center">
 
                 <Product key={product.id} product={product} />
                 </div>

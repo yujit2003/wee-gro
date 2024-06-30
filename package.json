@@ -4,12 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm i && npm run dev",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "@emotion/cache": "^11.11.0",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@mui/material": "^5.15.21",
@@ -17,7 +16,6 @@
     "@mui/styles": "^5.15.21",
     "@react-navigation/native": "^6.1.17",
     "@react-navigation/native-stack": "^6.9.26",
-    "3d-react-carousal": "^5.0.0",
     "axios": "^1.7.2",
     "bcryptjs": "^2.4.3",
     "eslint": "8.46.0",
@@ -27,7 +25,6 @@
     "next-auth": "^4.22.3",
     "puppeteer": "^22.12.1",
     "react": "^18.3.1",
-    "react-chartjs-2": "^5.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.2.0",
     "react-rating-stars-component": "^2.2.0",
@@ -37,7 +34,6 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "@types/react-plotly.js": "^2.6.3",
     "autoprefixer": "^10.4.19",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
