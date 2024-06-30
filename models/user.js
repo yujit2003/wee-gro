@@ -14,6 +14,9 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    role: {
+      type: String,
+    },
     watchList: {
       type: [String],
       default: [],

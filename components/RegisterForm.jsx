@@ -8,6 +8,7 @@ export default function RegisterForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [role, setRole] = useState("");  // New state for role
   const [error, setError] = useState("");
 
   const router = useRouter();
@@ -15,13 +16,13 @@ export default function RegisterForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!name || !email || !password) {
+    if (!name || !email || !password || !role) {
       setError("All fields are necessary.");
       return;
     }
 
     try {
-      const resUserExists = await fetch("api/userExists", {
+      const resUserExists = await fetch("/api/userExists", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -36,7 +37,7 @@ export default function RegisterForm() {
         return;
       }
 
-      const res = await fetch("api/register", {
+      const res = await fetch("/api/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -45,6 +46,7 @@ export default function RegisterForm() {
           name,
           email,
           password,
+          role,  // Include role in the registration request
         }),
       });
 
@@ -70,18 +72,30 @@ export default function RegisterForm() {
             onChange={(e) => setName(e.target.value)}
             type="text"
             placeholder="Full Name"
+            className="p-2 border rounded"
           />
           <input
             onChange={(e) => setEmail(e.target.value)}
             type="text"
             placeholder="Email"
+            className="p-2 border rounded"
           />
           <input
             onChange={(e) => setPassword(e.target.value)}
             type="password"
             placeholder="Password"
+            className="p-2 border rounded"
           />
-          <button className="bg-green-600 text-white font-bold cursor-pointer px-6 py-2">
+          <select
+            onChange={(e) => setRole(e.target.value)}
+            value={role}
+            className="p-2 border rounded"
+          >
+            <option value="" disabled>Select Role</option>
+            <option value="investor">Investor</option>
+            <option value="startup">Startup</option>
+          </select>
+          <button className="bg-green-600 text-white font-bold cursor-pointer px-6 py-2 rounded">
             Register
           </button>
 

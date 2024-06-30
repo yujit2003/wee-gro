@@ -1,11 +1,11 @@
 "use client"
 import React, { useState, useEffect } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Drawer from "@material-ui/core/Drawer";
-import { Avatar, Button } from "@material-ui/core";
+import { makeStyles } from '@mui/styles';
+import Drawer from '@mui/material/Drawer';
+import { Avatar, Button } from '@mui/material';
 import { AiFillDelete } from "react-icons/ai";
 import { signOut, useSession, auth } from "next-auth/react";
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 
 const useStyles = makeStyles({
   container: {
@@ -73,6 +73,7 @@ export default function UseSideBar() {
   const [state, setState] = React.useState({
     right: false,
   });
+
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (
@@ -157,7 +158,7 @@ export default function UseSideBar() {
               width: 38,
               marginLeft: 15,
               cursor: "pointer",
-              backgroundColor: "#EEBC1D",
+              backgroundColor: "#00FFFF",
             }}
           // src={user.photoURL}
           // alt={user.displayName || user.email}
@@ -171,6 +172,9 @@ export default function UseSideBar() {
               <div className={classes.profile}>
                 <Avatar
                   className={classes.picture}
+                  style={{
+                    backgroundColor: "#00FFFF",
+                  }}
                 />
                 <span
                   style={{
@@ -200,12 +204,13 @@ export default function UseSideBar() {
                   </span>
                   {watchList.length > 0 ? (
                     watchList.map((symbol, index) => (
-                      <div className={classes.symbol} key={index}>
+                      <div className="bg-cyan-500 text-white font-bold flex justify-center items-center rounded hover:bg-cyan-600 transition duration-300 w-60" key={index}>
                         <Button
                           onClick={() => router.replace(`dashboard/${symbol}`)}
+                          className="text-black p-4"
                         >{symbol}
                         </Button>
-                        <span style={{ display: "flex", gap: 8 }}>
+                        <span style={{ display: "flex", gap: 8 }} className="pl-2">
                           Remove
                           <AiFillDelete
                             style={{ cursor: "pointer" }}
@@ -221,13 +226,14 @@ export default function UseSideBar() {
                 </div>
 
               </div>
-              <Button
-                variant="contained"
-                className={classes.logout}
-                onClick={() => signOut()}
-              >
-                Log Out
-              </Button>
+              <div className="flex justify-ceter items-center">
+                <Button
+                  className="bg-cyan-500 text-white font-bold ml-6 rounded hover:bg-cyan-600 transition duration-300 w-60"
+                  onClick={() => signOut({ callbackUrl: '/' })}
+                >
+                  Log Out
+                </Button>
+              </div>
             </div>
           </Drawer>
         </React.Fragment>
