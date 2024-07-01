@@ -5,7 +5,6 @@ MONGODB_URI, NEXTAUTH_SECRET, NEXTAUTH_URL
 
 Video Demo -> 
 
-![image](https://github.com/yujit2003/Stock-Hunter/assets/97657345/23807af4-cb70-4c0d-bdaf-fdac8f1b0ae4)
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
