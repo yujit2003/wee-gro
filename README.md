@@ -1,3 +1,5 @@
+Link - https://wee-gro-ibtt.vercel.app/
+
 1. npm install
 2. add .env file containing
 MONGODB_URI, NEXTAUTH_SECRET, NEXTAUTH_URL
