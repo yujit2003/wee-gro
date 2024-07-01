@@ -3,7 +3,7 @@
 MONGODB_URI, NEXTAUTH_SECRET, NEXTAUTH_URL
 3.npm run dev
 
-Video Demo -> 
+Video Demo -> https://drive.google.com/file/d/1--WFcN9jJAXu2PeOHAwqQFheIzIwtXES/view?usp=sharing
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
